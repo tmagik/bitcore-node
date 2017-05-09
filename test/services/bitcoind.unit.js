@@ -845,6 +845,23 @@ describe('Bitcoin Service', function() {
       var bitcoind = new BitcoinService(config);
       bitcoind._getNetworkConfigPath().should.equal('regtest/bitcoin.conf');
     });
+    it('will get default config path for a custom network', function() {
+      var customnet = bitcore.Networks.add({
+        name: 'customnet'
+      });
+      var config = {
+        node: {
+          network: bitcore.Networks.customnet
+        },
+        spawn: {
+          datadir: 'testdir',
+          exec: 'testpath'
+        }
+      };
+      var bitcoind = new BitcoinService(config);
+      bitcoind._getNetworkConfigPath().should.equal('customnet/bitcoin.conf');
+      bitcore.Networks.remove(customnet);
+    });
   });
 
   describe('#_getNetworkOption', function() {
@@ -862,6 +879,15 @@ describe('Bitcoin Service', function() {
       bitcoind.node.network = bitcore.Networks.testnet;
       bitcore.Networks.enableRegtest();
       bitcoind._getNetworkOption().should.equal('--regtest');
+    });
+    it('return --customnet for customnet', function() {
+      var customnet = bitcore.Networks.add({
+        name: 'customnet'
+      });
+      var bitcoind = new BitcoinService(baseConfig);
+      bitcoind.node.network = bitcore.Networks.customnet;
+      bitcoind._getNetworkOption().should.equal('--customnet');
+      bitcore.Networks.remove(customnet);
     });
     it('return undefined for livenet', function() {
       var bitcoind = new BitcoinService(baseConfig);
