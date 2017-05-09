@@ -86,6 +86,25 @@ describe('Bitcore Node', function() {
       should.exist(regtest);
       node.network.should.equal(regtest);
     });
+    it('will set a custom network', function() {
+      var customnet = Networks.add({
+        name: 'customnet'
+      });
+      var config = {
+        network: 'customnet',
+        services: [
+          {
+            name: 'test1',
+            module: TestService
+          }
+        ],
+      };
+      var TestNode = proxyquire('../lib/node', {});
+      TestNode.prototype.start = sinon.spy();
+      var node = new TestNode(config);
+      node.network.should.equal(Networks.customnet);
+      Networks.remove(customnet);
+    });
     it('will be able to disable log formatting', function() {
       var config = {
         network: 'regtest',
@@ -444,6 +463,16 @@ describe('Bitcore Node', function() {
       };
       var node = new Node(baseConfig);
       node.getNetworkName().should.equal('regtest');
+    });
+    it('it will return the custom network', function() {
+      Networks.add({
+        name: 'customnet'
+      });
+      var baseConfig = {
+        network: 'customnet'
+      };
+      var node = new Node(baseConfig);
+      node.getNetworkName().should.equal('customnet');
     });
   });
 
