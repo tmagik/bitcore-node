@@ -2,5 +2,14 @@
 	path = insight-api
 	url = ./insight-api
 [submodule "insight"]
-	path = insight
+	path = insight-ui
 	url = ./insight
+[submodule "bitcoind-rpc"]
+	path = codecoind-rpc
+	url = git@github.com:tmagik/bitcoind-rpc
+[submodule "bitcore-lib"]
+	path = bitcore-lib
+	url = git@github.com:tmagik/bitcore-lib
+[submodule "bitcore-message"]
+	path = bitcore-message
+	url = git@github.com:tmagik/bitcore-message

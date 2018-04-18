@@ -42,16 +42,16 @@
     "bitcoind"
   ],
   "dependencies": {
+    "bitcore-lib": "./bitcore-lib",
+    "codecoind-rpc": "./codecoind-rpc",
+    "insight-api": "./insight-api",
+    "insight-ui": "./insight-ui",
     "async": "^1.3.0",
-    "bitcoind-rpc": "satoshilabs/bitcoind-rpc#2b7ca438704bdb7325a6a2cec38f833c1680ceb2",
-    "bitcore-lib": "satoshilabs/bitcore-lib#8e2caed768aa269b433a14981f0e36c0838a3d91",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
     "commander": "^2.8.1",
     "errno": "^0.1.4",
     "express": "^4.13.3",
-    "insight-ui": "./insight",
-    "insight-api": "./insight-api",
     "liftoff": "^2.2.0",
     "lru-cache": "^4.0.1",
     "mkdirp": "0.5.0",
@@ -59,7 +59,7 @@
     "semver": "^5.0.1",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
-    "zeromq": "^4.2.0"
+    "zmq": "^2.15.3"
   },
   "optionalDependencies": {
     "bufferutil": "~1.2.1",
