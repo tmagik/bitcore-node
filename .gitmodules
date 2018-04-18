@@ -1,0 +1,6 @@
+[submodule "insight-api"]
+	path = insight-api
+	url = ./insight-api
+[submodule "insight"]
+	path = insight
+	url = ./insight

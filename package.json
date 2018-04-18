@@ -31,8 +31,6 @@
     "bitcoind": "./bin/bitcoind"
   },
   "scripts": {
-    "preinstall": "./scripts/download",
-    "verify": "./scripts/download --skip-bitcoin-download --verify-bitcoin-download",
     "test": "mocha -R spec --recursive",
     "regtest": "./scripts/regtest",
     "jshint": "jshint --reporter=node_modules/jshint-stylish ./lib",
@@ -52,6 +50,8 @@
     "commander": "^2.8.1",
     "errno": "^0.1.4",
     "express": "^4.13.3",
+    "insight-ui": "./insight",
+    "insight-api": "./insight-api",
     "liftoff": "^2.2.0",
     "lru-cache": "^4.0.1",
     "mkdirp": "0.5.0",
