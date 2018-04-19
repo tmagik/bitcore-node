@@ -1,9 +1,9 @@
 [submodule "insight-api"]
 	path = insight-api
-	url = ./insight-api
+	url = git@github.com:tmagik/insight-api
 [submodule "insight"]
 	path = insight-ui
-	url = ./insight
+	url = git@github.com:tmagik/insight-ui
 [submodule "bitcoind-rpc"]
 	path = codecoind-rpc
 	url = git@github.com:tmagik/bitcoind-rpc
