@@ -3,7 +3,7 @@
 	url = git@github.com:tmagik/insight-api
 [submodule "insight"]
 	path = insight-ui
-	url = git@github.com:tmagik/insight-ui
+	url = git@github.com:tmagik/insight
 [submodule "bitcoind-rpc"]
 	path = codecoind-rpc
 	url = git@github.com:tmagik/bitcoind-rpc
